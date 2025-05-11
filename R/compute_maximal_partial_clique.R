@@ -65,15 +65,13 @@ compute_maximal_partial_clique <- function(adj_mat, alpha, verbose = FALSE) {
         return(dens)
       })
       
+      if (all(densities < alpha)) break  # No more valid additions
+      
       max_density <- max(densities)
       best_j <- others[which.max(densities)]
       
-      if (max_density >= alpha) {
-        candidate <- c(candidate, best_j)
-        others <- setdiff(others, best_j)
-      } else {
-        break
-      }
+      candidate <- c(candidate, best_j)
+      others <- setdiff(others, best_j)
     }
     
     dens_final <- edge_density(adj_mat[candidate, candidate, drop = FALSE])

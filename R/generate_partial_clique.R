@@ -23,6 +23,11 @@ generate_partial_clique <- function(n, clique_fraction, clique_edge_density, see
     stop("clique_edge_density must be a single numeric value between 0 and 1.")
   }
   
+  if (!(is.null(seed) || (is.numeric(seed) && floor(seed) == seed))) {
+    stop("seed must be integer if set.")
+  }
+  
+  
   if (!is.null(seed)) set.seed(seed)
   
   # Calculate number of clique nodes and minimum number of edges in the partial clique
