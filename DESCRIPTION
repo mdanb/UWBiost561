@@ -4,16 +4,17 @@ Version: 0.0.0.9000
 Authors@R: 
     person("Mohamad", "Bairakdar", , "mdanb@uw.edu", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: This package can be used to create random graphs with pre-specified user parameters regarding clique and edge density. 
-It can also be used for computing maximal partial cliques 
+Description: This package can be used to create random graphs with pre-specified user parameters regarding clique and edge density. It can also be used for computing maximal partial cliques 
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 Suggests: 
   knitr,
+  patchwork,
   rmarkdown,
   bookdown,
   tidyverse,
-  ggplot2
+  ggplot2,
+  testthat
 VignetteBuilder: knitr

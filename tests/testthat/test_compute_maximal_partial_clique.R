@@ -56,8 +56,7 @@ test_that("compute_maximal_partial_clique gets the correct answer for carefully 
   adj_matrix <- matrix(0, nrow = n, ncol = n)
   adj_matrix[1:3, 1:3] <- 1
   adj_matrix[4:5, 4:5] <- 1
-  mat$adj_mat <- adj_matrix
-  result <- compute_maximal_partial_clique(adj_mat = mat$adj_mat, alpha = 0.9)
+  result <- compute_maximal_partial_clique(adj_mat = adj_matrix, alpha = 0.9)
   expect_true(all(result$clique_idx == c(1,2,3)))
 })
 
