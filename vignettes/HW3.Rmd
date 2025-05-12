@@ -493,6 +493,11 @@ I do not care about how many or complex your functions are.
 Realistically, you can use just a meaningful subset of functions in your existing code base
 for this project.)
 
+<span style="color:red">
+I will probably expand the `UWBiost561` package. 
+</span>
+
+
 <u>**Question 5B**</u>: Push <u>**all**</u> your code onto GitHub. This includes all the contents inside your `R` and `tests` folder and your `DESCRIPTION`, `NAMESPACE`, and `LICENSE` files. Please double-check that you can see all the necessary files online on the GitHub website (i.e., https://github.com/).
 <span style="color: blue;">(There is nothing to report for this question.)</span>
 
