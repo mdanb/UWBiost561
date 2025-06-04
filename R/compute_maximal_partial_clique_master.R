@@ -26,13 +26,13 @@ compute_maximal_partial_clique_master <- function(adj_mat,
                                                   number,
                                                   time_limit = 30){
   stopifnot(number %in% c(1:15))
-
+  
   # see https://stackoverflow.com/questions/1743698/evaluate-expression-given-as-a-string
   string <- paste0("compute_maximal_partial_clique", number,
                    "(adj_mat = adj_mat, alpha = alpha)")
   result <- .interruptor(eval(parse(text = string)),
                          time_limit = time_limit)
-
+  
   if("status" %in% names(result) && result$status == "error"){
     result <- list(clique_idx = NA,
                    edge_density = NA,
@@ -51,18 +51,22 @@ compute_maximal_partial_clique_master <- function(adj_mat,
   } else {
     result$status <- "completed"
   }
-
+  
   # check if it's a valid partial clique
-  if(!all(is.na(result$clique_idx))){
-    true_density <- compute_correct_density(adj_mat = adj_mat,
-                                            clique_idx = result$clique_idx)
-    valid <- (true_density >= alpha)
+  if(!all(is.na(result$clique_idx)) && 
+     all(result$clique_idx %% 1 == 0) &&
+     all(result$clique_idx > 0) &&
+     length(result$clique_idx) <= nrow(adj_mat)){
+    
+      true_density <- compute_correct_density(adj_mat = adj_mat,
+                                              clique_idx = result$clique_idx)
+      valid <- (true_density >= alpha)
   } else {
     valid <- FALSE
   }
-
+  
   result$valid <- valid
-
+  
   return(result)
 }
 
@@ -80,7 +84,7 @@ compute_correct_density <- function(adj_mat, clique_idx){
      any(is.na(clique_idx)) ||
      any(is.nan(clique_idx)) ||
      any(!is.numeric(clique_idx))) return(0)
-
+  
   stopifnot(is.matrix(adj_mat),
             nrow(adj_mat) == ncol(adj_mat),
             sum(abs(adj_mat - t(adj_mat))) <= 1e-6,
@@ -89,14 +93,14 @@ compute_correct_density <- function(adj_mat, clique_idx){
             all(clique_idx %% 1 == 0),
             all(clique_idx > 0),
             length(clique_idx) <= nrow(adj_mat))
-
+  
   clique_idx <- unique(clique_idx)
-
+  
   n <- nrow(adj_mat)
   m <- length(clique_idx)
-
+  
   if(m == 1) return(1)
-
+  
   numerator <- (sum(adj_mat[clique_idx, clique_idx]) - m)/2
   denominator <- m*(m-1)/2
   return(numerator/denominator)
@@ -106,12 +110,12 @@ compute_correct_density <- function(adj_mat, clique_idx){
 
 # from https://stackoverflow.com/questions/34346619/how-to-stop-a-function-in-r-that-is-taking-too-long-and-give-it-an-alternative
 .interruptor <- function(FUN, time_limit) {
-
+  
   setTimeLimit(cpu = time_limit, elapsed = time_limit, transient = TRUE)
   on.exit({
     setTimeLimit(cpu = Inf, elapsed = Inf, transient = FALSE)
   })
-
+  
   start_time <- Sys.time()
   result <- tryCatch({
     FUN
@@ -119,9 +123,9 @@ compute_correct_density <- function(adj_mat, clique_idx){
     return(list(status = "timed_out"))
   })
   end_time <- Sys.time()
-
+  
   diff_time <- difftime(end_time, start_time, units = "secs")
-
+  
   # account for a small fudge factor
   if(diff_time < 29 && "status" %in% names(result) && result$status == "timed_out"){
     return(list(status = "error"))
