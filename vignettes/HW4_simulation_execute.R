@@ -1,4 +1,4 @@
-
+library(UWBiost561)
 n_level_list = perform_simulation(imp_numbers = 1:15,
                                   trials=3,
                                   n_vec=c(10,15,20),
