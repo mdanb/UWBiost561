@@ -42,6 +42,10 @@ all your code should be visible in the knitted chunks.
 comparable AI tool) to what extent when completing this homework. See the syllabus
 for the course expectations.
 
+<span style="color:red">
+I used ChatGPT to help generate the code for the plotting. 
+</span>
+
 # Note about the homework
 
 **Note**: Most of your R code for this homework will **not** be in this homework.
@@ -448,6 +452,11 @@ in this R Markdown file.)</span>
 <u>**Question 3E**</u>: Now, on Bayes, there should be at least four new files in the `vignettes` folder due to Question 3A-3D: `HW4_simulation_execute.R`, `HW4_simulation_execute.slurm`, `HW4_simulation_plot.R`, and `HW4_simulation.png`. (There might be many other files, but I am okay with it if there are more files than needed.) Commit and push all these files via Git (using the command line on Bayes) onto GitHub.com (via `git push`), and then pull all these files via Git onto your local laptop. (You can pull either through the command line via `git pull` or the RStudio GUI.)
 
 Finally, include your plot in this R Markdown file. (I'm having you put your plot in your `vignettes` folder and push/pull your `UWBiost561` package because I'm assuming you knit this `HW4.Rmd` file locally on your laptop, but you need to somehow get your plot from Bayes onto your local laptop.)
+
+```{r}
+knitr::include_graphics("simulation_results.png")
+```
+
 
 # Q4: Describing your final project
 
