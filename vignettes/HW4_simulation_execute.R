@@ -1,3 +1,4 @@
+library(UWBiost561)
 
 n_vec=c(10,15,20)
 alpha_vec=c(0.5,0.75,0.95)
