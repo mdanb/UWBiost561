@@ -11,6 +11,7 @@
 #'   \item{clique_idx}{A numeric vector of node indices that form the partial clique.}
 #'   \item{edge_density}{The edge density among the selected nodes (between 0 and 1).}
 #' }
+#' @name compute_maximal_partial_clique4
 #' @export
 compute_maximal_partial_clique4 <- function(adj_mat, alpha) {
   # Input checks

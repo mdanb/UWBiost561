@@ -8,7 +8,8 @@
 #'   \item{clique_idx}{Nodes in the found maximum partial clique.}
 #'   \item{edge_density}{Edge density of found clique. Should be above alpha.}
 #'
-#'@export
+#' @name compute_maximal_partial_clique3
+#' @export
 compute_maximal_partial_clique3 = function(adj_mat, alpha, verbose = 0){
   stopifnot(all(diag(adj_mat) == 1), all(adj_mat %in% c(0, 1), all(adj_mat == t(adj_mat)), nrow(adj_mat) == ncol(adj_mat)))
   stopifnot(is.null(rownames(adj_mat)) && is.null(colnames(adj_mat)))

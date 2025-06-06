@@ -5,8 +5,8 @@
 #' @param alpha Single numeric between 0.5 and 1, the minimum required edge-density.
 #'
 #' @return A list with clique_idx and edge_density
+#' @name compute_maximal_partial_clique13
 #' @export
-
 compute_maximal_partial_clique13 <- function(adj_mat, alpha) {
   
   ## --- 1. INPUT VALIDATION ---------------------------------------

@@ -10,6 +10,7 @@
 #' @param adj_mat A symmetric adjacency matrix with 5-50 rows and columns.
 #' @param alpha A numeric value between 0.5 and 1 (inclusive) indicating the minimum fraction of edges among nodes in the outputted partial clique.
 #' @param method One of `"simple"` or "`pivot`". `"simple"` searches for the maximal partial clique using a modified version of the original Bron-Kerbosch algorithm, and `"pivot"` uses a modified version of the Bron-Kerbosch algorith with pivot (Bron & Kerbosch 1973).
+#' @name compute_maximal_partial_clique11
 #' @export
 #' @references Bron, C., & Kerbosch, J. (1973). Algorithm 457: finding all cliques of an undirected graph. Communications of the ACM, 16(9), 575-577.
 #' @return Outputs list containing \itemize{

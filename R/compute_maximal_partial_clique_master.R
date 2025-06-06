@@ -20,6 +20,7 @@
 #'
 #' @return a list with `clique_idx`, `edge_density` (which are from the implementation itself)
 #' and `status` and `valid` (which are added by this function)
+#' @name compute_maximal_partial_clique_master
 #' @export
 compute_maximal_partial_clique_master <- function(adj_mat,
                                                   alpha,
@@ -78,6 +79,7 @@ compute_maximal_partial_clique_master <- function(adj_mat,
 #' @param clique_idx a `numeric` vector of index numbers corresponding to the nodes (i.e., values between 1 and `nrow(adj_mat)`) that your function deems to be in the maximum partial clique. This vector cannot have duplicate elements, must be positive integers, and the largest value cannot exceed `nrow(adj_mat)`
 #'
 #' @return a numeric, which is the density of edges among \code{adj_mat[clique_idx,clique_idx]}
+#' @name compute_correct_density
 #' @export
 compute_correct_density <- function(adj_mat, clique_idx){
   if(length(clique_idx) == 0 ||

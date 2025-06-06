@@ -9,6 +9,7 @@
 #'   \item{clique_idx}{Vector of node indices in the maximal partial clique.}
 #'   \item{edge_density}{Density of the subgraph induced by clique_idx.}
 #' }
+#' @name compute_maximal_partial_clique1
 #' @export
 compute_maximal_partial_clique1 <- function(adj_mat, alpha, verbose = FALSE) {
   # --- Input Validation ---

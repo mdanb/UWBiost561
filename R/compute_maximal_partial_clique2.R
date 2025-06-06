@@ -6,6 +6,7 @@
 #' @param alpha minimum edge density
 #'
 #' @return a list containing the maximum partial clique and its density
+#' @name compute_maximal_partial_clique2
 #' @export
 compute_maximal_partial_clique2 <- function(adj_mat, alpha) {
   n <- nrow(adj_mat)

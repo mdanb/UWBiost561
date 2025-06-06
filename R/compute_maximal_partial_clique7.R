@@ -4,6 +4,7 @@
 #' @param alpha a numeric value between 0.5 and 1
 #'
 #' @return a list containing clique_idx and edge density
+#' @name compute_maximal_partial_clique7
 #' @export
 compute_maximal_partial_clique7 <- function(adj_mat, alpha){
   # check input

@@ -19,6 +19,7 @@
 #'   \item{edge_density}{The actual edge density among these nodes.}
 #' }
 #'
+#' @name compute_maximal_partial_clique5
 #' @export
 compute_maximal_partial_clique5 <- function(adj_mat, alpha, verbose = FALSE) {
   # -------------------

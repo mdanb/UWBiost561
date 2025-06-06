@@ -1,3 +1,4 @@
+
 #' Generate a Partial Clique Adjacency Matrix
 #'
 #' @param n Integer. Total number of nodes in the graph.
@@ -6,6 +7,7 @@
 #' @param seed Optional. Integer seed for reproducibility.
 #'
 #' @return A list with at least the element 'adj_mat', a symmetric adjacency matrix with a partial clique.
+#' @name generate_partial_clique
 #' @export
 generate_partial_clique <- function(n, clique_fraction, clique_edge_density, seed = NULL) {
   # Input validation

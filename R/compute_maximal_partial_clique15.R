@@ -7,6 +7,7 @@
 #' @param alpha a minimum threshold on when to stop
 #'
 #' @return list
+#' @name compute_maximal_partial_clique15
 #' @export
 compute_maximal_partial_clique15 <- function(adj_mat, alpha) {
   stopifnot(is.matrix(adj_mat), is.numeric(alpha))

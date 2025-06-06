@@ -12,7 +12,7 @@
 #'   \item{clique_idx}{Indices of nodes in the maximal partial clique.}
 #'   \item{edge_density}{The edge density among the selected nodes.}
 #' }
-#'
+#' @name compute_maximal_partial_clique6
 #' @export
 compute_maximal_partial_clique6 <- function(adj_mat, alpha) {
   # Input checks

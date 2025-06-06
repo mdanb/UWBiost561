@@ -12,6 +12,7 @@
 #' clique_idx, A numeric vector of node indices forming the maximal partial clique.
 #' edge_density, The edge density (between 0 and 1) of the returned clique.
 #'
+#' @name compute_maximal_partial_clique10
 #' @export
 #'
 #' @examples

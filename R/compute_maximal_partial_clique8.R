@@ -5,6 +5,7 @@
 #' @param alpha The density required to be a partial clique, excluding self-edges.
 #'
 #' @returns a list containing the index of the clique \code{clique_idx} and density of the clique
+#' @name compute_maximal_partial_clique8
 #' @export
 compute_maximal_partial_clique8 <- function(adj_mat,
                                            alpha){

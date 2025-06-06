@@ -18,6 +18,7 @@
 #'    \item{clique_idx}{a numeric vector of node indices in the partial clique.}
 #'    \item{edge_density}{the edge density among those nodes.}
 #'  }
+#' @name compute_maximal_partial_clique14
 #' @export
 compute_maximal_partial_clique14 <-
   function(adj_mat, alpha, top_k_seeds = NULL) {
