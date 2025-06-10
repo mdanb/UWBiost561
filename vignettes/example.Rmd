@@ -1,0 +1,64 @@
+---
+title: "Using the UWBiost561 package"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Using the UWBiost561 package}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+This document introduces to you how to use the package **UWBiost561** for graph generation and finding the maximal partial clique.
+
+We first use the generate_partial_clique() function to generate an adjacency matrix with a dense subgraph.
+```{r}
+library(UWBiost561)
+set.seed(42)
+gen_result <- generate_partial_clique(n = 10, clique_fraction = 0.5, clique_edge_density = 0.8)
+adj_mat <- gen_result$adj_mat
+
+print(adj_mat)
+```
+
+We visualize the graph to inspect its structure.
+
+```{r}
+library(igraph)
+
+g <- graph_from_adjacency_matrix(adj_mat, mode = "undirected", diag = FALSE)
+plot(g, vertex.label = NA, vertex.size = 20,
+     main = "Random Partial Clique (10 nodes)")
+```
+
+Next, we use the `compute_maximal_partial_clique()` function to find a dense subgraph that exceeds a given edge density threshold.
+
+```{r}
+result <- compute_maximal_partial_clique(adj_mat, alpha = 0.7, verbose = TRUE)
+
+cat("Nodes in maximal partial clique:", result$clique_idx, "\n")
+cat("Edge density of clique:", round(result$edge_density, 3), "\n")
+```
+
+We now run a small-scale simulation to evaluate different implementations of computing the maximal partial clique on graphs of varying sizes and density thresholds.
+
+```{r}
+n_vec <- c(10, 12)          # small sizes for speed
+alpha_vec <- c(0.6, 0.8)    # varying thresholds
+
+# Simulate using implementations 1 and 2 only
+results <- perform_simulation(
+  imp_numbers = 1:10,
+  trials = 2,
+  n_vec = n_vec,
+  alpha_vec = alpha_vec
+)
+
+# Print result structure
+str(results)
+```
