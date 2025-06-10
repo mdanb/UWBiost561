@@ -20,3 +20,4 @@ Suggests:
   devtools,
   readr
 VignetteBuilder: knitr
+URL: https://mdanb.github.io/UWBiost561/
