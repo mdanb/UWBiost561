@@ -9,11 +9,11 @@
 #'
 #' @examples
 #' # Run a simulation across multiple graph sizes and alpha thresholds
-#' n_vec <- c(10, 15, 20)
-#' alpha_vec <- c(0.5, 0.75, 0.95)
+#' n_vec <- c(10)
+#' alpha_vec <- c(0.5)
 #' 
 #' n_level_list <- perform_simulation(
-#'   imp_numbers = 1:15,
+#'   imp_numbers = 1:10,
 #'   trials = 3,
 #'   n_vec = n_vec,
 #'   alpha_vec = alpha_vec
