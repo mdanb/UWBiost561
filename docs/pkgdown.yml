@@ -2,5 +2,8 @@ pandoc: 2.19.2
 pkgdown: 2.0.7
 pkgdown_sha: ~
 articles: {}
-last_built: 2025-06-10T05:37Z
+last_built: 2025-06-10T05:56Z
+urls:
+  reference: https://mdanb.github.io/UWBiost561/reference
+  article: https://mdanb.github.io/UWBiost561/articles
 
