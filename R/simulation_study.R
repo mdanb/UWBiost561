@@ -6,6 +6,31 @@
 #' @param alpha_vec List. alpha values to test
 #'
 #' @return A list with simulation results
+#'
+#' @examples
+#' # Run a simulation across multiple graph sizes and alpha thresholds
+#' n_vec <- c(10, 15, 20)
+#' alpha_vec <- c(0.5, 0.75, 0.95)
+#' 
+#' n_level_list <- perform_simulation(
+#'   imp_numbers = 1:15,
+#'   trials = 3,
+#'   n_vec = n_vec,
+#'   alpha_vec = alpha_vec
+#' )
+#' 
+#' # Record metadata: date of run and session info
+#' date_of_run <- Sys.time()
+#' session_info <- devtools::session_info()
+#' 
+#' # Save the results to file for reproducibility
+#' save(
+#'   n_level_list, alpha_vec, n_vec,
+#'   date_of_run, session_info,
+#'   file = "~/HW4_simulation.RData"
+#' )
+#' 
+#' @name perform_simulation
 #' @export
 #' 
 perform_simulation <- function(imp_numbers, trials, n_vec, alpha_vec) {
