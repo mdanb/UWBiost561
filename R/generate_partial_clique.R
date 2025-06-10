@@ -7,6 +7,15 @@
 #' @param seed Optional. Integer seed for reproducibility.
 #'
 #' @return A list with at least the element 'adj_mat', a symmetric adjacency matrix with a partial clique.
+#'
+#' @examples
+#' # Generate a partial clique with 10 nodes, 50% in the clique,
+#' # and 80% edge density within the clique.
+#' result <- generate_partial_clique(n = 10, clique_fraction = 0.5, clique_edge_density = 0.8, seed = 42)
+#' 
+#' # Inspect the adjacency matrix
+#' print(result$adj_mat)
+#'
 #' @name generate_partial_clique
 #' @export
 generate_partial_clique <- function(n, clique_fraction, clique_edge_density, seed = NULL) {
