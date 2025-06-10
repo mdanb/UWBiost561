@@ -21,6 +21,12 @@
       <ul class="navbar-nav me-auto"><li class="active nav-item">
   <a class="nav-link" href="../reference/index.html">Reference</a>
 </li>
+<li class="nav-item dropdown">
+  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
+  <div class="dropdown-menu" aria-labelledby="dropdown-articles">
+    <a class="dropdown-item" href="../articles/example.html">Using the UWBiost561 package</a>
+  </div>
+</li>
       </ul><form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off"></form>
 
@@ -70,6 +76,41 @@
 <p>A list with simulation results</p>
     </div>
 
+    <div class="section level2">
+    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Run a simulation across multiple graph sizes and alpha thresholds</span></span></span>
+<span class="r-in"><span><span class="va">n_vec</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">alpha_vec</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.5</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">n_level_list</span> <span class="op">&lt;-</span> <span class="fu">perform_simulation</span><span class="op">(</span></span></span>
+<span class="r-in"><span>  imp_numbers <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span>,</span></span>
+<span class="r-in"><span>  trials <span class="op">=</span> <span class="fl">3</span>,</span></span>
+<span class="r-in"><span>  n_vec <span class="op">=</span> <span class="va">n_vec</span>,</span></span>
+<span class="r-in"><span>  alpha_vec <span class="op">=</span> <span class="va">alpha_vec</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Value of n: 10"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "  Value of alpha: 0.5"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "    Working on trial: 1"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> **********</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "    Working on trial: 2"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> **********</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "    Working on trial: 3"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> **********</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "  ===="</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Record metadata: date of run and session info</span></span></span>
+<span class="r-in"><span><span class="va">date_of_run</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html" class="external-link">Sys.time</a></span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">session_info</span> <span class="op">&lt;-</span> <span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://sessioninfo.r-lib.org/reference/session_info.html" class="external-link">session_info</a></span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Save the results to file for reproducibility</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/save.html" class="external-link">save</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>  <span class="va">n_level_list</span>, <span class="va">alpha_vec</span>, <span class="va">n_vec</span>,</span></span>
+<span class="r-in"><span>  <span class="va">date_of_run</span>, <span class="va">session_info</span>,</span></span>
+<span class="r-in"><span>  file <span class="op">=</span> <span class="st">"~/HW4_simulation.RData"</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+</code></pre></div>
+    </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside></div>
 

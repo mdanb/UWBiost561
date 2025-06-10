@@ -38,6 +38,12 @@
 <li class="nav-item">
   <a class="nav-link" href="reference/index.html">Reference</a>
 </li>
+<li class="nav-item dropdown">
+  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
+  <div class="dropdown-menu" aria-labelledby="dropdown-articles">
+    <a class="dropdown-item" href="articles/example.html">Using the UWBiost561 package</a>
+  </div>
+</li>
       </ul>
 <form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="search.json" id="search-input" placeholder="Search for" autocomplete="off">
@@ -50,8 +56,26 @@
   </div>
 </nav><div class="container template-home">
 <div class="row">
-  <main id="main" class="col-md-9">
-This package can be used to create random graphs with pre-specified user parameters regarding clique and edge density. It can also be used for computing maximal partial cliques 
+  <main id="main" class="col-md-9"><div class="section level1">
+<div class="page-header"><h1 id="purpose">Purpose<a class="anchor" aria-label="anchor" href="#purpose"></a>
+</h1></div>
+<p>This is a demo package for UW BIOST 561 (Spring 2025), taught by Kevin Lin.</p>
+<ul>
+<li>The URL to the GitHub (i.e., the source code) is: <a href="https://github.com/mdanb/UWBiost561" class="external-link uri">https://github.com/mdanb/UWBiost561</a>
+</li>
+<li>The URL to the Pkgdown webpage is: <a href="https://mdanb.github.io/UWBiost561/" class="uri">https://mdanb.github.io/UWBiost561/</a>
+</li>
+</ul>
+</div>
+<div class="section level1">
+<h1 id="how-to-install">How to install<a class="anchor" aria-label="anchor" href="#how-to-install"></a>
+</h1>
+<p>This package is called <code>UWBiost561</code>. To install, run the following code (in R):</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://devtools.r-lib.org/" class="external-link">devtools</a></span><span class="op">)</span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"mdanb/UWBiost561"</span><span class="op">)</span></span></code></pre></div>
+</div>
+
   </main><aside class="col-md-3"><div class="license">
 <h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
