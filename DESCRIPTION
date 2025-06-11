@@ -18,6 +18,7 @@ Suggests:
   ggplot2,
   testthat,
   devtools,
+  igraph,
   readr
 VignetteBuilder: knitr
 URL: https://mdanb.github.io/UWBiost561/
