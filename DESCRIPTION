@@ -1,5 +1,5 @@
 Package: UWBiost561
-Title: Package for generic graph analysis  
+Title: Package for generic graph analyses
 Version: 0.0.0.9000
 Authors@R: 
     person("Mohamad", "Bairakdar", , "mdanb@uw.edu", role = c("aut", "cre"),
